@@ -1,0 +1,36 @@
+{
+  "llm": {
+    "provider": "mock"
+  },
+  "search": {
+    "provider": "mock",
+    "max_workers": 3,
+    "per_dimension_workers": 2,
+    "evidence_per_dimension": 5
+  },
+  "ark": {
+    "api_key": "",
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3/responses",
+    "model": "doubao-seed-1-8-251228",
+    "timeout_seconds": 300,
+    "max_retries": 2,
+    "enable_tool_choice": true,
+    "stream": true,
+    "web_search": {
+      "limit": 10,
+      "max_keyword": 3,
+      "user_location": {
+        "type": "approximate",
+        "country": "中国"
+      }
+    },
+    "thinking": {
+      "type": "enabled"
+    },
+    "reasoning": {
+      "effort": "low"
+    },
+    "temperature": 0.2,
+    "max_output_tokens": 12000
+  }
+}

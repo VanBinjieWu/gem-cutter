@@ -1,0 +1,12 @@
+name: gem-cutter
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - fastapi==0.125.0
+      - uvicorn[standard]==0.44.0
+      - pydantic==1.10.26
+      - httpx==0.28.1

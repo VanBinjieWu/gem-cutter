@@ -1,0 +1,54 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+server.out.log
+server.err.log
+.idea/
+config/settings.json
+
+# Secrets and local env
+.env
+.env.*
+!.env.example
+config/*.local.json
+config/*.secret.json
+
+# Logs
+*.log
+logs/
+
+# Python tooling/cache
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Python packaging/build
+build/
+dist/
+*.egg-info/
+
+# Local virtualenvs
+.venv/
+venv/
+env/
+
+# Frontend build/cache
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
