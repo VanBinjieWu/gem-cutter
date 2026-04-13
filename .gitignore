@@ -43,6 +43,21 @@ frontend/node_modules/
 frontend/dist/
 frontend/build/
 frontend/.vite/
+frontend/coverage/
+frontend/.eslintcache
+frontend/.stylelintcache
+
+# Frontend local env
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Package manager noise
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
 
 # OS/editor noise
 .DS_Store
