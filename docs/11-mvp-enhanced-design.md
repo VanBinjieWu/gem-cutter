@@ -546,8 +546,8 @@ MVP 前端建议分成 5 个主区：
 
 交付：
 
-- FastAPI/Next.js 基础骨架。
-- Postgres schema：`opportunity_projects`、`evaluation_runs`、`raw_signals`、`evidence_items`、`evidence_clusters`、`score_ledgers`、`gate_decisions`、`evaluation_reports`。
+- FastAPI/React + Vite 基础骨架。
+- SQLite 关系表：`opportunity_projects`、`evaluation_runs`、`raw_signals`、`evidence_items`、`evidence_clusters`、`score_ledgers`、`gate_decisions`、`evaluation_reports`、`llm_call_logs`、`event_records`。
 - EvaluationRun 状态机。
 - SSE 事件流。
 

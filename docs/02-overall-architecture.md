@@ -80,7 +80,7 @@ flowchart TB
 
 ### 3.1 Frontend 工作台
 
-建议使用 Next.js 实现，借鉴 DeerFlow 的 workspace 模式：
+当前正式前端采用 React + Vite + TypeScript 实现，借鉴 DeerFlow 的 workspace 模式：
 
 - 左侧：机会/项目列表、阶段状态、历史任务。
 - 中间：对话与 Agent 进度流。
@@ -169,11 +169,11 @@ sequenceDiagram
 
 | 层 | 推荐技术 |
 | --- | --- |
-| 前端 | Next.js, React, TypeScript, Tailwind CSS, TanStack Query |
+| 前端 | React, Vite, TypeScript, Tailwind CSS |
 | API | FastAPI, Pydantic, SSE |
 | Agent | LangGraph, LangChain, MCP, Skills, Sandbox |
 | 任务 | Redis + RQ/Celery/Arq，后期可引入 Temporal |
-| 数据库 | Postgres + pgvector |
+| 数据库 | 本地开发使用 SQLite 关系表；生产目标为 Postgres + pgvector |
 | 对象存储 | MinIO/S3 |
 | 可观测性 | OpenTelemetry, Langfuse/LangSmith 可选 |
 | 部署 | Docker Compose 起步，后期 Kubernetes |
@@ -229,4 +229,3 @@ gem-cutter/
   docs/
   skills/
 ```
-

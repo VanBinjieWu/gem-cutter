@@ -27,11 +27,11 @@ Gem Cutter 的研发应优先验证“热点 -> 评估 -> PRD -> 原型/开发�
 任务：
 
 - 创建后端 FastAPI 项目。
-- 创建前端 Next.js 项目。
+- 创建前端 React + Vite 项目。
 - 设计 `harness` 与 `app/domain` 分层。
 - 接入基础 LLM 配置。
 - 实现线程、运行、SSE streaming 的最小版本。
-- 建立 Postgres、Redis、MinIO 本地 docker compose。
+- 本地开发先使用 SQLite 关系表；Postgres、Redis、MinIO 作为生产化阶段再引入。
 - 编写基础 CI：lint、test、typecheck。
 
 交付物：
@@ -208,4 +208,3 @@ Gem Cutter 的研发应优先验证“热点 -> 评估 -> PRD -> 原型/开发�
 - 多平台舆情实时监控
 - 多租户计费
 - 插件市场
-

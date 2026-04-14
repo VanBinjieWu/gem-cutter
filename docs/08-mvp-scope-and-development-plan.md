@@ -334,11 +334,11 @@ backend/
 
 本地开发建议：
 
-- Postgres：业务数据库。
+- SQLite：本地开发业务数据库，使用关系表保存证据链与运行状态。
 - Redis：运行状态、异步任务、缓存。
 - MinIO：报告、抓取原文、导出文件。
 - FastAPI：后端 API。
-- Next.js：前端。
+- React + Vite：前端。
 
 MVP 可以暂缓：
 

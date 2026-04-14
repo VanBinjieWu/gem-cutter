@@ -81,13 +81,15 @@ Docs: http://127.0.0.1:8000/docs
 Config status: http://127.0.0.1:8000/api/config/status
 ```
 
-The frontend is currently a static demo page, not a Next.js/Vite app:
+The frontend is now an official React + Vite workspace:
 
-```text
-frontend/index.html
+```powershell
+cd frontend
+npm install
+npm run dev
 ```
 
-Open it directly in the browser and point it at `http://127.0.0.1:8000`.
+Open `http://127.0.0.1:5173` and point it at the backend API `http://127.0.0.1:8000`. The old static demo is archived at `frontend/legacy/mvp-demo.html`.
 
 ## Configuration
 
