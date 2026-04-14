@@ -151,7 +151,9 @@ class EvidenceService:
         saved = self.store.add_clusters(clusters)
         for cluster in saved:
             for evidence_id in cluster.representative_evidence_ids:
-                item = self.store.data.evidence_items[evidence_id]
+                item = self.store.get_evidence_item(evidence_id)
+                if not item:
+                    continue
                 item.cluster_id = cluster.id
                 self.store.update_evidence_item(item)
         return saved
@@ -363,7 +365,6 @@ class ReportService:
     ):
         self.store = store
         self.artifact_dir = Path(artifact_dir)
-        self.artifact_dir.mkdir(parents=True, exist_ok=True)
         self.settings = settings or load_settings()
         self.ark_client = ArkResponsesClient(self.settings.ark)
 
@@ -630,8 +631,6 @@ class ReportService:
         structured: Dict[str, Any],
     ) -> EvaluationReport:
         markdown = "\n".join(lines) + "\n"
-        report_path = self.artifact_dir / f"{run.id}_{report_type.value}.md"
-        report_path.write_text(markdown, encoding="utf-8")
         refs = [
             item.id
             for item in self.store.list_evidence(run.id)
@@ -642,11 +641,13 @@ class ReportService:
             project_id=project.id,
             report_type=report_type,
             title=title,
-            markdown_path=str(report_path),
+            markdown_path="",
             structured_data=structured,
             evidence_refs=refs,
         )
+        report.markdown_path = f"sqlite://reports/{report.id}/markdown"
         saved = self.store.add_report(report)
+        self.store.save_report_markdown(saved.id, markdown)
         project.latest_report_id = saved.id
         self.store.update_project(project)
         return saved

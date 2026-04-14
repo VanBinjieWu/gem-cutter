@@ -30,7 +30,7 @@ ArkResponsesClient
 
 - 不接独立搜索 API，所有联网搜索通过 Responses API 的内置工具 `web_search` 完成。
 - 仍保留现有 `RawSignal -> EvidenceItem -> EvidenceCluster -> ScoreLedger -> GateDecision` 主链路。
-- LLM 不直接写最终业务状态，所有输出必须先通过 Pydantic schema 校验，再进入 JSON store。
+- LLM 不直接写最终业务状态，所有输出必须先通过 Pydantic schema 校验，再进入 SQLite store。
 - API Key 通过环境变量注入，不写入代码、文档或运行日志。
 - 当前 mock adapter 保留为 fallback 和测试用例，真实模式通过配置开启。
 

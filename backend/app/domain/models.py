@@ -261,5 +261,6 @@ class StoreData(DomainModel):
     score_ledgers: Dict[str, ScoreLedger] = Field(default_factory=dict)
     gate_decisions: Dict[str, GateDecision] = Field(default_factory=dict)
     reports: Dict[str, EvaluationReport] = Field(default_factory=dict)
+    report_markdowns: Dict[str, str] = Field(default_factory=dict)
     llm_call_logs: Dict[str, LLMCallLog] = Field(default_factory=dict)
     events: Dict[str, EventRecord] = Field(default_factory=dict)

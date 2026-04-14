@@ -201,7 +201,7 @@ erDiagram
 | report_type | text | trend/market/prd/design/test/ops/sentiment |
 | version | int | 版本号 |
 | title | text | 标题 |
-| markdown_path | text | Markdown 报告对象路径 |
+| markdown_path | text | Markdown 报告对象路径或 SQLite markdown URI |
 | structured_data | jsonb | 结构化结果 |
 | evidence_refs | jsonb | 引用 evidence_id 列表 |
 | agent_run_id | uuid | 生成该报告的 AgentRun |

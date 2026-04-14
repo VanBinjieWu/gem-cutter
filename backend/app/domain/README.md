@@ -11,4 +11,4 @@ This package implements the first MVP vertical slice:
 7. Decide a `GateDecision`.
 8. Render an evaluation report and, when allowed, a PRD report.
 
-The current storage backend is a JSON store under `data/` so the MVP can run locally without Postgres. The service boundaries mirror the intended Postgres-backed architecture and can be swapped later.
+The current storage backend is SQLite under `data/gem_cutter.db` so the app can run locally without Postgres. The service boundaries mirror the intended repository-backed architecture and can be swapped later. Legacy `data/gem_cutter_store.json` content is imported into SQLite on startup when the database is empty.

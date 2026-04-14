@@ -18,7 +18,7 @@ OpportunityProject
 -> EvaluationReport / PRD Report
 ```
 
-The important design rule: do not turn this into a free-form report generator. Reports and PRDs should be grounded in structured evidence and score ledgers. LLM PRD generation is allowed only after a `go` or `conditional_go` Gate and must pass Pydantic schema validation before Markdown is written.
+The important design rule: do not turn this into a free-form report generator. Reports and PRDs should be grounded in structured evidence and score ledgers. LLM PRD generation is allowed only after a `go` or `conditional_go` Gate and must pass Pydantic schema validation before Markdown is stored.
 
 ## Environment
 
@@ -144,14 +144,13 @@ Never print, log, or persist the API key.
 
 ## Storage
 
-The current MVP uses a local JSON store, not a real database:
+The current local runtime uses SQLite, not Postgres:
 
 ```text
-data/gem_cutter_store.json
-data/reports/
+data/gem_cutter.db
 ```
 
-`data/` is runtime output and is ignored by git. Do not rely on it for tests unless the test creates its own temporary store.
+Legacy `data/gem_cutter_store.json` content is imported into SQLite on startup when the database is empty. Report Markdown is persisted in SQLite and exposed through `GET /api/reports/{report_id}/markdown`; old Markdown files are only a fallback for legacy imported reports. `data/` is runtime output and is ignored by git. Do not rely on it for tests unless the test creates its own temporary store.
 
 The intended future production path is Postgres plus optional pgvector, but do not migrate storage unless the task explicitly asks for it.
 
