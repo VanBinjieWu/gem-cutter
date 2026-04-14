@@ -150,7 +150,7 @@ The current local runtime uses SQLite, not Postgres:
 data/gem_cutter.db
 ```
 
-Legacy `data/gem_cutter_store.json` content is imported into SQLite on startup when the database is empty. Report Markdown is persisted in SQLite and exposed through `GET /api/reports/{report_id}/markdown`; old Markdown files are only a fallback for legacy imported reports. `data/` is runtime output and is ignored by git. Do not rely on it for tests unless the test creates its own temporary store.
+Domain data is stored in dedicated SQLite tables rather than a JSON payload log. Report Markdown is persisted on the `evaluation_reports` table and exposed through `GET /api/reports/{report_id}/markdown`. `data/` is runtime output and is ignored by git. Do not rely on it for tests unless the test creates its own temporary store.
 
 The intended future production path is Postgres plus optional pgvector, but do not migrate storage unless the task explicitly asks for it.
 

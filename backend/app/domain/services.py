@@ -35,11 +35,11 @@ from .models import (
     utc_now,
 )
 from .sources import SourceAdapter, SourceSearchRequest, default_adapters
-from .store import JsonStore
+from .store import StoreProtocol
 
 
 class ProjectService:
-    def __init__(self, store: JsonStore):
+    def __init__(self, store: StoreProtocol):
         self.store = store
 
     def create_project(
@@ -61,7 +61,7 @@ class ProjectService:
 
 
 class RunEvents:
-    def __init__(self, store: JsonStore):
+    def __init__(self, store: StoreProtocol):
         self.store = store
 
     def emit(self, evaluation_run_id: str, event_type: str, **payload: Any) -> EventRecord:
@@ -71,7 +71,7 @@ class RunEvents:
 
 
 class EvidenceService:
-    def __init__(self, store: JsonStore):
+    def __init__(self, store: StoreProtocol):
         self.store = store
 
     def normalize(self, project: OpportunityProject, run: EvaluationRun) -> List[EvidenceItem]:
@@ -240,7 +240,7 @@ class EvidenceService:
 
 
 class ScoringService:
-    def __init__(self, store: JsonStore):
+    def __init__(self, store: StoreProtocol):
         self.store = store
 
     def score(self, run: EvaluationRun) -> List[ScoreLedger]:
@@ -359,7 +359,7 @@ class ScoringService:
 class ReportService:
     def __init__(
         self,
-        store: JsonStore,
+        store: StoreProtocol,
         artifact_dir: str | Path = "data/reports",
         settings: Optional[AppSettings] = None,
     ):
@@ -656,7 +656,7 @@ class ReportService:
 class EvaluationService:
     def __init__(
         self,
-        store: JsonStore,
+        store: StoreProtocol,
         adapters: Optional[List[SourceAdapter]] = None,
         artifact_dir: str | Path = "data/reports",
         max_search_workers: int = 3,

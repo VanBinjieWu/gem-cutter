@@ -250,17 +250,3 @@ class EventRecord(DomainModel):
     event_type: str
     payload: Dict[str, Any] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=utc_now)
-
-
-class StoreData(DomainModel):
-    projects: Dict[str, OpportunityProject] = Field(default_factory=dict)
-    runs: Dict[str, EvaluationRun] = Field(default_factory=dict)
-    raw_signals: Dict[str, RawSignal] = Field(default_factory=dict)
-    evidence_items: Dict[str, EvidenceItem] = Field(default_factory=dict)
-    evidence_clusters: Dict[str, EvidenceCluster] = Field(default_factory=dict)
-    score_ledgers: Dict[str, ScoreLedger] = Field(default_factory=dict)
-    gate_decisions: Dict[str, GateDecision] = Field(default_factory=dict)
-    reports: Dict[str, EvaluationReport] = Field(default_factory=dict)
-    report_markdowns: Dict[str, str] = Field(default_factory=dict)
-    llm_call_logs: Dict[str, LLMCallLog] = Field(default_factory=dict)
-    events: Dict[str, EventRecord] = Field(default_factory=dict)

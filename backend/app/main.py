@@ -14,14 +14,12 @@ from pydantic import BaseModel
 from .core.config import load_settings, public_settings
 from .domain.models import ReportType, RunStatus
 from .domain.services import EvaluationService, ProjectService
-from .domain.store import SQLiteStore, migrate_json_store_to_sqlite
+from .domain.store import SQLiteStore
 
 
 DATA_DIR = Path("data")
 SETTINGS = load_settings()
 STORE = SQLiteStore(DATA_DIR / "gem_cutter.db")
-if not STORE.has_data():
-    migrate_json_store_to_sqlite(DATA_DIR / "gem_cutter_store.json", STORE)
 PROJECTS = ProjectService(STORE)
 EVALUATIONS = EvaluationService(
     STORE,
@@ -174,10 +172,6 @@ def create_app() -> FastAPI:
         if not report:
             raise HTTPException(status_code=404, detail="report not found")
         markdown = STORE.get_report_markdown(report_id)
-        if markdown is None and report.markdown_path and not report.markdown_path.startswith("sqlite://"):
-            path = Path(report.markdown_path)
-            if path.exists():
-                markdown = path.read_text(encoding="utf-8")
         if markdown is None:
             raise HTTPException(status_code=404, detail="report markdown not found")
         media_type = "text/markdown" if report.report_type == ReportType.EVALUATION else "text/plain"

@@ -106,7 +106,7 @@ The local development backend uses SQLite storage under:
 data/gem_cutter.db
 ```
 
-Legacy `data/gem_cutter_store.json` data is imported into SQLite on startup when the database is empty. Reports are still served as Markdown through the API, but report Markdown is now persisted in SQLite instead of `data/reports/*.md`.
+Domain data is stored in dedicated SQLite tables rather than a JSON payload log. Reports are still served as Markdown through the API, and report Markdown is persisted on the `evaluation_reports` table instead of `data/reports/*.md`.
 
 Ark calls use streaming by default. Each run writes model call logs into SQLite and exposes them through:
 
