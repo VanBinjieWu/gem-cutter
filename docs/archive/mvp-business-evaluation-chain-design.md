@@ -1,6 +1,9 @@
 # Gem Cutter MVP 商业评估链路架构、技术与 Skill/Prompt 设计
 
-> 更新说明：基于 BettaFish/MiroFish 对标后的完善版 MVP 设计，商业评估链路的底层主数据应升级为 `RawSignal -> EvidenceItem -> EvidenceCluster -> ScoreLedger -> GateDecision`。完整实现蓝图见 [11-mvp-enhanced-design.md](11-mvp-enhanced-design.md)。
+> Status: Archive.
+> Scope: 早期商业评估链路、Skill 和 Prompt 设计细节；当前开发以 `../current/evaluation-chain.md` 为准。
+
+> 更新说明：基于 BettaFish/MiroFish 对标后的完善版 MVP 设计，商业评估链路的底层主数据应升级为 `RawSignal -> EvidenceItem -> EvidenceCluster -> ScoreLedger -> GateDecision`。完整实现蓝图见 [../current/evaluation-chain.md](../current/evaluation-chain.md)。
 
 ## 1. 设计目标
 

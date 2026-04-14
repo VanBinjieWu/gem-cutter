@@ -402,10 +402,10 @@ tests/test_ark_integration.py
 Key design docs:
 
 ```text
-docs/05-data-model.md
-docs/11-mvp-enhanced-design.md
-docs/12-ark-responses-llm-search-integration-plan.md
-docs/13-official-frontend-architecture.md
+docs/current/domain-model.md
+docs/current/evaluation-chain.md
+docs/current/ark-integration.md
+docs/current/frontend-architecture.md
 ```
 
 ## 开发原则 / Development Principles

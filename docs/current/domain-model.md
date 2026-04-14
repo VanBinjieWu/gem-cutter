@@ -1,6 +1,9 @@
 # Gem Cutter 数据模型设计
 
-> 更新说明：MVP 完善版新增 `OpportunityProject`、`EvaluationRun`、`RawSignal`、`EvidenceCluster`、`ScoreLedger` 等关键实体。完整 MVP 设计见 [11-mvp-enhanced-design.md](11-mvp-enhanced-design.md)。
+> Status: Active current design.
+> Scope: 当前领域实体、SQLite 关系表与未来数据层方向。
+
+> 更新说明：MVP 完善版新增 `OpportunityProject`、`EvaluationRun`、`RawSignal`、`EvidenceCluster`、`ScoreLedger` 等关键实体。完整 MVP 设计见 [evaluation-chain.md](evaluation-chain.md)。
 
 ## 1. 设计原则
 

@@ -1,33 +1,64 @@
 # Gem Cutter 文档目录
 
-Gem Cutter 是一个面向“互联网热点发现、商业可行性评估、产品开发与运营管理”的一站式 Agent 项目。它参考 DeerFlow 2 的分层思想：底层保留通用 Agent Runtime，上层构建面向商业孵化的阶段化业务工作流。
+本文档是 `docs/` 的导航入口。Gem Cutter 的文档按“当前事实源、产品规划、治理、研究参考、历史归档”重新分类，避免把早期推演材料和当前实现状态混在一起。
 
-## 文档清单
+## 分类原则
 
-| 文档 | 目的 | 适用读者 |
+| 分类 | 用途 | 维护策略 |
 | --- | --- | --- |
-| [01-product-requirements.md](01-product-requirements.md) | 完整产品需求文档，定义目标、用户、范围、流程、验收标准 | 产品、研发、测试、业务负责人 |
-| [02-overall-architecture.md](02-overall-architecture.md) | 总体技术架构、模块边界、技术栈、部署形态 | 架构师、后端、前端、DevOps |
-| [03-feature-modules.md](03-feature-modules.md) | 功能点拆分与模块级需求 | 产品、研发、测试 |
-| [04-agent-workflows.md](04-agent-workflows.md) | Agent 角色、阶段状态机、协作流程、评分机制 | Agent 工程、算法、产品 |
-| [05-data-model.md](05-data-model.md) | 领域实体、数据表、对象存储、向量索引设计 | 后端、数据工程、测试 |
-| [06-iteration-plan.md](06-iteration-plan.md) | MVP 到商业化版本的开发迭代规划 | 项目经理、研发负责人 |
-| [07-risk-and-compliance.md](07-risk-and-compliance.md) | 风险、合规、安全、质量门禁与应对策略 | 产品、法务、安全、运营 |
-| [08-mvp-scope-and-development-plan.md](08-mvp-scope-and-development-plan.md) | MVP 核心需求、范围控制、开发方案、验收脚本 | 产品、研发、测试、项目负责人 |
-| [09-mvp-business-evaluation-chain-design.md](09-mvp-business-evaluation-chain-design.md) | MVP 商业评估链路的架构、技术、Skill 与 Prompt 设计 | Agent 工程、后端、产品、测试 |
-| [10-bettafish-mirofish-reference-and-mvp-optimization.md](10-bettafish-mirofish-reference-and-mvp-optimization.md) | BettaFish/MiroFish 舆情与图谱仿真架构对标，以及 MVP 优化方案 | 架构师、Agent 工程、产品、后端 |
-| [11-mvp-enhanced-design.md](11-mvp-enhanced-design.md) | 吸收 DeerFlow、BettaFish、MiroFish 后的 MVP 完善版实现蓝图 | 产品、架构师、Agent 工程、后端、前端 |
-| [12-ark-responses-llm-search-integration-plan.md](12-ark-responses-llm-search-integration-plan.md) | 火山方舟 Ark Responses API、豆包内置搜索与 LLM 分析接入方案 | Agent 工程、后端、架构师 |
+| `current/` | 当前实现和近期开发应优先遵循的设计事实源 | 代码变更后优先同步 |
+| `product/` | 产品需求、功能范围和路线图 | 产品方向变化时同步 |
+| `governance/` | 风险、合规、安全、质量门禁 | 上线或接入外部能力前复查 |
+| `research/` | 外部项目对标和架构研究 | 作为参考，不直接等同于实现承诺 |
+| `archive/` | 早期 MVP 推演和历史设计 | 保留上下文，默认不作为当前实现依据 |
 
-## 推荐阅读顺序
+## 当前事实源
 
-1. 先读 [01-product-requirements.md](01-product-requirements.md)，确认产品范围和业务目标。
-2. 再读 [02-overall-architecture.md](02-overall-architecture.md)，理解系统如何落地。
-3. 研发实现前细读 [03-feature-modules.md](03-feature-modules.md)、[04-agent-workflows.md](04-agent-workflows.md)、[05-data-model.md](05-data-model.md)。
-4. 启动 MVP 前优先使用 [08-mvp-scope-and-development-plan.md](08-mvp-scope-and-development-plan.md) 控制第一版范围。
-5. 实际开发 MVP 时，以 [11-mvp-enhanced-design.md](11-mvp-enhanced-design.md) 作为主设计入口。
-6. 接入豆包模型和内置联网搜索时，阅读 [12-ark-responses-llm-search-integration-plan.md](12-ark-responses-llm-search-integration-plan.md)。
-7. 实现 MVP 商业评估链路前细读 [09-mvp-business-evaluation-chain-design.md](09-mvp-business-evaluation-chain-design.md)。
-8. 对标 BettaFish/MiroFish 的舆情与图谱仿真能力时，阅读 [10-bettafish-mirofish-reference-and-mvp-optimization.md](10-bettafish-mirofish-reference-and-mvp-optimization.md)。
-9. 项目排期时使用 [06-iteration-plan.md](06-iteration-plan.md)。
-10. 上线前使用 [07-risk-and-compliance.md](07-risk-and-compliance.md) 做发布检查。
+| 文档 | 状态 | 说明 |
+| --- | --- | --- |
+| [current/system-overview.md](current/system-overview.md) | Active | 总体架构、模块边界、技术栈和运行流程 |
+| [current/domain-model.md](current/domain-model.md) | Active | 领域实体、SQLite 关系表、报告与证据数据结构 |
+| [current/evaluation-chain.md](current/evaluation-chain.md) | Active | `RawSignal -> EvidenceItem -> EvidenceCluster -> ScoreLedger -> GateDecision` 主链路 |
+| [current/agent-workflows.md](current/agent-workflows.md) | Reference | Agent 角色、阶段状态机、评分机制和 Skill 设计 |
+| [current/ark-integration.md](current/ark-integration.md) | Active | Ark Responses API、内置搜索、LLM PRD 生成接入方案 |
+| [current/frontend-architecture.md](current/frontend-architecture.md) | Active | React + Vite 正式前端的信息架构、交互和代码组织 |
+
+## 产品规划
+
+| 文档 | 状态 | 说明 |
+| --- | --- | --- |
+| [product/product-requirements.md](product/product-requirements.md) | Reference | 完整产品需求、角色、范围、流程和验收标准 |
+| [product/feature-modules.md](product/feature-modules.md) | Reference | 功能模块拆分和长期能力图谱 |
+| [product/roadmap.md](product/roadmap.md) | Reference | 从 MVP 到商业化版本的迭代路线 |
+
+## 治理与风险
+
+| 文档 | 状态 | 说明 |
+| --- | --- | --- |
+| [governance/risk-and-compliance.md](governance/risk-and-compliance.md) | Reference | 风险、合规、安全、质量门禁和人工复核策略 |
+
+## 研究参考
+
+| 文档 | 状态 | 说明 |
+| --- | --- | --- |
+| [research/bettafish-mirofish-reference.md](research/bettafish-mirofish-reference.md) | Research | BettaFish/MiroFish 对标分析和可迁移设计启发 |
+
+## 历史归档
+
+| 文档 | 状态 | 说明 |
+| --- | --- | --- |
+| [archive/mvp-scope-and-development-plan.md](archive/mvp-scope-and-development-plan.md) | Archive | 早期 MVP 范围和开发方案，保留历史上下文 |
+| [archive/mvp-business-evaluation-chain-design.md](archive/mvp-business-evaluation-chain-design.md) | Archive | 早期商业评估链路、Skill 和 Prompt 设计细节 |
+
+## 推荐阅读路径
+
+新开发者建议按以下顺序阅读：
+
+1. [../README.md](../README.md)：了解项目定位、启动方式、配置、存储和代码地图。
+2. [current/system-overview.md](current/system-overview.md)：理解当前整体架构和技术栈。
+3. [current/evaluation-chain.md](current/evaluation-chain.md)：理解证据链、评分账本和 Gate 决策。
+4. [current/domain-model.md](current/domain-model.md)：理解领域对象和 SQLite 关系表。
+5. [current/frontend-architecture.md](current/frontend-architecture.md)：开发前端时阅读。
+6. [current/ark-integration.md](current/ark-integration.md)：接入或调试 Ark 搜索/LLM 时阅读。
+
+做产品或规划工作时，优先读 `product/` 和 `governance/`；做历史追溯或方案对比时，再读 `research/` 和 `archive/`。

@@ -1,5 +1,8 @@
 # Gem Cutter 正式版前端交互与代码架构设计
 
+> Status: Active current design.
+> Scope: React + Vite 正式前端的信息架构、交互和代码组织。
+
 本文定义 Gem Cutter 从静态 MVP demo 升级到正式 React + Vite 工作台的第一版方案。目标不是先堆满所有功能，而是搭出可持续开发的专业前端骨架，让证据、评分、门禁、报告和 PRD 成为用户可理解、可复盘、可推进的工作流。
 
 ## 1. 产品交互定位

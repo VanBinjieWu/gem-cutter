@@ -194,10 +194,10 @@ tests/test_ark_integration.py
 Design docs:
 
 ```text
-docs/11-mvp-enhanced-design.md
-docs/12-ark-responses-llm-search-integration-plan.md
-docs/09-mvp-business-evaluation-chain-design.md
-docs/05-data-model.md
+docs/current/evaluation-chain.md
+docs/current/ark-integration.md
+docs/archive/mvp-business-evaluation-chain-design.md
+docs/current/domain-model.md
 ```
 
 ## Current LLM/Search State

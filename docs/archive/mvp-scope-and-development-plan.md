@@ -1,6 +1,9 @@
 # Gem Cutter MVP 核心需求与开发方案
 
-> 更新说明：基于 BettaFish/MiroFish 对标后的完善版 MVP 设计，实际开发时应优先参考 [11-mvp-enhanced-design.md](11-mvp-enhanced-design.md)。本文保留原始 MVP 范围和计划，并将核心口径升级为“证据账本 + 评分账本 + 决策门 + 报告/PRD 渲染”。
+> Status: Archive.
+> Scope: 早期 MVP 范围和开发方案，保留历史上下文；当前开发以 `../current/` 为准。
+
+> 更新说明：基于 BettaFish/MiroFish 对标后的完善版 MVP 设计，实际开发时应优先参考 [../current/evaluation-chain.md](../current/evaluation-chain.md)。本文保留原始 MVP 范围和计划，并将核心口径升级为“证据账本 + 评分账本 + 决策门 + 报告/PRD 渲染”。
 
 ## 1. MVP 定位
 

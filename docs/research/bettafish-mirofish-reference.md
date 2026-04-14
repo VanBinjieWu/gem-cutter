@@ -1,10 +1,13 @@
 # BettaFish / MiroFish 对标分析与 MVP 优化方案
 
+> Status: Research.
+> Scope: 外部项目对标和可迁移设计启发，不直接等同于当前实现承诺。
+
 本文基于以下本地源码进行分析：
 
 - `C:\Users\Trivedi\projects\github-cloned\BettaFish`
 - `C:\Users\Trivedi\projects\github-cloned\MiroFish`
-- 已有 Gem Cutter 规划文档：`docs/08-mvp-scope-and-development-plan.md`、`docs/09-mvp-business-evaluation-chain-design.md`
+- 已有 Gem Cutter 规划文档：`docs/archive/mvp-scope-and-development-plan.md`、`docs/archive/mvp-business-evaluation-chain-design.md`
 
 目标不是直接复刻两个舆情项目，而是提炼可迁移的架构模式，优化 Gem Cutter MVP 的商业评估链路、舆情输入、证据管理、任务状态和报告生成方式。
 
@@ -702,9 +705,9 @@ MiroFish 的分步工作台体验值得迁移，但 Gem Cutter MVP 的前端不�
 
 需要在后续细化时同步修订：
 
-- `05-data-model.md`：补充 `RawSignal`、`EvidenceCluster`、`ScoreLedger` 的字段。
-- `08-mvp-scope-and-development-plan.md`：把 TaskService、ProjectService、Evidence Board 加入 MVP 开发任务。
-- `09-mvp-business-evaluation-chain-design.md`：将 reflection loop 改为证据缺口驱动补搜；补充 SourceAdapter 和热度/情感 enrichment。
+- `docs/current/domain-model.md`：补充 `RawSignal`、`EvidenceCluster`、`ScoreLedger` 的字段。
+- `docs/archive/mvp-scope-and-development-plan.md`：把 TaskService、ProjectService、Evidence Board 加入 MVP 开发任务。
+- `docs/archive/mvp-business-evaluation-chain-design.md`：将 reflection loop 改为证据缺口驱动补搜；补充 SourceAdapter 和热度/情感 enrichment。
 
 ## 11. 最终推荐 MVP 蓝图
 

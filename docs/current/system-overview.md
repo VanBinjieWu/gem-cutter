@@ -1,5 +1,8 @@
 # Gem Cutter 总体架构设计
 
+> Status: Active current design.
+> Scope: 当前本地实现与生产化目标架构的总览。
+
 ## 1. 架构原则
 
 Gem Cutter 参考 DeerFlow 2 的 `Harness + App` 分层设计，但业务层更聚焦“热点到商业化产品”的阶段化交付。

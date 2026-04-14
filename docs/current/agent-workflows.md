@@ -1,5 +1,8 @@
 # Gem Cutter Agent 工作流设计
 
+> Status: Reference.
+> Scope: Agent 角色、状态机、评分机制和 Skill 设计参考；实现时以 `current/evaluation-chain.md` 为主。
+
 ## 1. Agent 角色体系
 
 Gem Cutter 使用一个总控 Agent 和多个专业 Agent。总控 Agent 负责理解用户目标、选择阶段、拆分任务、汇总结果、触发门禁；专业 Agent 负责在明确边界内完成具体工作。
@@ -129,4 +132,3 @@ LeadAgent 的默认策略：
 - `qa-plan`：测试计划与验收规范。
 - `growth-ops`：增长运营实验设计。
 - `sentiment-response`：舆情分级与响应话术。
-

@@ -1,5 +1,8 @@
 # Gem Cutter MVP 完善版设计
 
+> Status: Active current design.
+> Scope: 当前证据链、评分账本、Gate 决策和评估工作流主设计。
+
 本文是在 MVP 原设计基础上，吸收 DeerFlow、BettaFish、MiroFish 的可迁移经验后形成的“实现版蓝图”。它优先解决 MVP 里最容易漂移的三个问题：
 
 1. 不让系统退化成“舆情报告生成器”。
@@ -605,8 +608,8 @@ MVP 前端建议分成 5 个主区：
 
 本文不推翻原有 `08` 和 `09` 文档，而是做收敛和增强：
 
-- `08-mvp-scope-and-development-plan.md` 提供 MVP 范围、页面、开发计划。
-- `09-mvp-business-evaluation-chain-design.md` 提供商业评估链路的 Skill/Prompt/Guardrails。
+- [../archive/mvp-scope-and-development-plan.md](../archive/mvp-scope-and-development-plan.md) 提供早期 MVP 范围、页面、开发计划。
+- [../archive/mvp-business-evaluation-chain-design.md](../archive/mvp-business-evaluation-chain-design.md) 提供早期商业评估链路的 Skill/Prompt/Guardrails。
 - 本文将 BettaFish/MiroFish 的对标结论正式纳入 MVP 实现蓝图，作为实际开发时的优先参考。
 
 开发时建议以本文为 MVP 主设计入口，再回到 `08` 和 `09` 查看细节。

@@ -1,5 +1,8 @@
 # Ark Responses API 搜索与 LLM 接入设计方案
 
+> Status: Active current design.
+> Scope: Ark Responses API、内置搜索、流式日志和 LLM PRD 生成接入方案。
+
 本文设计 Gem Cutter MVP 下一阶段的“真实搜索 + LLM 分析”能力。当前代码仍使用 `MockWebSearchAdapter`、`MockNewsSearchAdapter`，本方案将其升级为基于火山方舟 Ark Responses API 的统一 LLM 底座，并使用模型内置联网搜索能力，而不是接入独立搜索 API。
 
 目标模型：
